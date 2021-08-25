@@ -1,2 +1,9 @@
 # Python Web App
- Web App using Python, Flask, Jinja2,  HTML & Bootstrap
+ This is a Web App demonstration I have made using:  
+- Python
+- Flask
+- Jinja2
+- HTML
+- Bootstrap
+
+
