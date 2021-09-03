@@ -1,9 +1,67 @@
 {% extends 'base.html' %}
 {% block title %}Sign Up{% endblock %}
 {%block content%}
-<form method="POST">
+
+
+<form method="POST" class="ml-5">
     <h1 class="center">
         Sign Up!
     </h1>
+    <div class="pb-3">
+        <div class="form-group mb-0">
+        <label for="email">Email Address</label>
+        </div>
+        <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            placeholder="Enter email: "
+        />
+    </div>
+
+
+    <div class="pb-3">
+        <div class="form-group mb-0">
+        <label for="name">Name</label>
+        </div>
+        <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            placeholder="Enter name: "
+        />
+    </div>
+
+
+    <div class="pb-3">
+        <div class="form-group mb-0">
+        <label for="password1">Password</label>
+    </div>
+    <input
+        type="password"
+        class="form-control"
+        id="password1"
+        name="password1"
+        placeholder="Enter password: "
+    />
+    </div>
+
+
+    <div class="pb-4">
+        <div class="form-group mb-0">
+        <label for="password2">Re-enter password</label>
+    </div>
+    <input
+        type="password"
+        class="form-control"
+        id="password2"
+        name="password2"
+        placeholder="Re-enter password: "
+    />
+    </div>
+
+    <button type="submit" class="btn btn-primary ">Submit</button>
 </form>
 {%endblock%}

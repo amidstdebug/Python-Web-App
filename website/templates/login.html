@@ -1,7 +1,38 @@
 {% extends 'base.html' %}
 {% block title %}Login{% endblock %}
 {%block content%}
+<form method="POST" class="ml-5">
     <h1 class="center">
-        Successfully Logged in!
+        Log In!
     </h1>
+    <div class="pb-3">
+        <div class="form-group mb-0">
+        <label for="email">Email Address</label>
+        </div>
+        <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            placeholder="Enter email: "
+        />
+    </div>
+
+
+    <div class="pb-3">
+        <div class="form-group mb-0">
+        <label for="password1">Password</label>
+    </div>
+    <input
+        type="password"
+        class="form-control"
+        id="password1"
+        name="password1"
+        placeholder="Enter password: "
+    />
+    </div>
+
+
+    <button type="submit" class="btn btn-primary ">Login</button>
+</form>
 {%endblock%}
