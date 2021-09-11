@@ -1,8 +1,9 @@
 from flask import Blueprint, render_template, request, flash, url_for, redirect
-from .models import User, Note
-from werkzeug.security import generate_password_hash, check_password_hash
-from . import db
 from flask_login import login_user, login_required, logout_user, current_user
+from werkzeug.security import generate_password_hash, check_password_hash
+
+from . import db
+from .models import User
 
 auth = Blueprint('auth', __name__)
 
@@ -30,14 +31,14 @@ def login():
             flash(
                 'Invalid Email', category='fail'
             )
-    return render_template('login.html')
+    return render_template('login.html', user=current_user)
 
 
 @auth.route('/logout', methods=['GET', 'POST'])
 @login_required
 def logout():
     logout_user()
-    return render_template('auth.login')
+    return redirect(url_for('auth.login'))
 
 
 @auth.route('/signup', methods=['GET', 'POST'])
@@ -85,4 +86,4 @@ def signup():
             )
             return redirect(url_for('views.home'))
 
-    return render_template('signup.html')
+    return render_template('signup.html', user=current_user)
