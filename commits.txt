@@ -1,0 +1,175 @@
+Updated:
+1. base.html (added alert)
+2. login.html (added form groups)
+3. signup.html (added form groups)
+4. init.py (added and initialised SQL and databases
+5. auth.py (added form input checking using GET and POST)
+6. models.py (added database creation for User)
+
+What did I learn?
+1. GET and POST
+2. Learnt how to create databases in Python with db.Column
+
+Upcoming Tasks
+1. Finish up models.py and learn more in-depth info about the classes especially the Note class
+
+
+
+
+Updated:
+- auth.py (added new user to database.db)
+- models.py (setup classes to initiate both classes and and create their respective objects)
+- init.py (database checking and creation upon the startup of app)
+
+What did I learn?
+- The Note class is not used for some proprietary SQAlchemy shit, but rather it is
+   used to store the user's notes, like literally the user's notes. so in this case, it stores
+   the user's id, the data (the string), and the date. This is then related back to the
+   User class using ForeignKey and db.relationship.
+       - When using ForeignKey, the class referenced should be in lowercase, etc: class
+          User will be 'user' instead of 'User'.
+       - Inversely, when using db.relationship, there will be no change in name of the
+         class reference, etc: class 'Note' will still be 'Note'
+
+- User class will be used to create user, and Note class will be used to create the
+   user's notes, with thsee two classes using the 'one to many' relationship, with the
+   User class being the parent and the Note class being the child. This opens up future
+   opportunities to create more classes in the models.py file to initiate more features
+   such as input the attachment of media files and possibly external files using the
+   same 'one to many' relationship, using the aforementioned ForeignKey and
+   db.relationship methods to connect the two.
+
+- If there is an integrity error, it most likely occurred since the item in the database
+  exists already
+
+What will I do next?
+- Learn the other relationships between parent and child classes; 'many to one', 'one
+   to one' etc.
+
+- Finish up the project, as I only have very few parts left; logging in of users, flask
+   login module, checking if user is logged in, notes HTML, creating and deleting user
+   notes
+
+
+
+
+
+Updated:
+- init.py (Did the login manager to ensure that users are unable to access homepage
+  without logging in)
+
+- auth.py (Did the logic for the user login and logout. Also updated logic to check for
+   concurrently existing users in the database using user.query.filter_by(). This will
+   ensure that the integrity error doesn't occur)
+
+- views.py (Added the @login_required decorator prerequisite to ensure users MUST
+   login before accessing the homepage, which kinda makes sense if you think about
+   it)
+
+What did I learn?
+- Password hashes are cool
+
+- Always remember to use the correct variable name
+
+- Python Decorators are important, but I am unsure as to how they are used, so I'll
+   need to look it up
+
+- request.form.get and user.query.filter_by are important when referencing data
+  located in external files
+
+What will I do next?
+- Go and familiarise myself with the whole 'flask_login' login_user, login_required,
+   logout_user, current_user functions
+
+- Learn how to use python decorators
+
+- Finish up the remainder of the project
+
+
+
+
+
+Updated:
+- auth.py (Fixed up some bugs and allowed inter-file variable usage and editing to
+  edit the database using current_user and more Flask imports and methods)
+
+- views.py (Addition of creation of notes and deletion of notes using jsonify)
+
+- index.js (Added the function to process the deletion of notes)
+
+- base.html (Re-added essential scripting to allow import of index.js)
+
+- home.html (Added display of notes using for loop and addition of deletion of notes
+
+||
+
+What did I learn?
+- I learnt that the usage of classes is super important. I am not too sure whether this
+  is OOP or not, but I think it's a step in the right direction. However, I need to get
+  used to all this shebang, since I'm not used to the referencing of classes all around
+  the place, especially cross-file.
+
+- Pay attention to the details. Man, I had quite te number of bugs to fix, like using
+  'note' instead of 'noteId', or using {% for notes in  user.notes %} instead of
+  {% for note in user.notes %}. The minute things really get to me, I don't know how to
+  kinda mention it I guess. It really is a pain in the ass to fucking scour the code,
+  but meh, that's the life of a webdev (frontend and backend) I suppose.
+
+- But yea, there really wasn't much learning going on in this case, because I was already
+  nearing the end. But all in all, it has been an enjoyable experience learning how to do
+  a Web App with Python, since all I know is just the frontend with a href to a javascript
+  file detailing some functions here and there. It was quite fun as I got to learn about
+  POST and GET requests, and I also stumbled upon DELETE and PUT requests in another backend
+  video, but it was just POST and GET for this project. From setting up Flask, to setting up
+  SQL (again), I learnt a lot; I learnt all the difference imports, functions and methods,
+  and also learnt how to set up a database in Python (rather traumatising but it was all in
+  good fun LOL). I also learnt what the (if __name__ = '__man__') thing was about. Apparently
+  we use it to differentiate Python scripts that are NOT supposed to be run, and the executable
+  Python scripts. A rather charming detail is that PyCharm puts this run button beside the code,
+  so that's neat. The way it works is basically that __name__ is the exact name of the file if
+  it is being imported, but it will be __main__ if it is the file itself. So what you'd do is
+  just check whether the file is being imported, because if it is, then it will not be run
+  because like I've mentioned earlier, the __name__ == filename. This convention can also be
+  used in tandem with the main() function, which also pops up a lot in terms of code readability
+  and the usage of global variables, because you most likely will never EVER want to use global
+  variables especially when you're working with multiple-file projects, like this one. I also
+  got to apply my BootStrap knowledge, using all the different classes to add paddings
+  (the fucking pl-5 and pr-5, goodness!). I have to thank Tech with Tim for the tutorial,
+  and I'm going to be working on more projects after this, like the MERN stack and Data Analytics
+  using services, software and code like say, Pandas, Matplotlib etc.
+
+||
+
+What will I do next?
+- Well, I have quite a number of projects coming up, but it's not an exhaustive list; these are
+  the ones that I'll be completing during this holiday.
+  - MERN Stack (MongoDB, Express, React, Node make up the MERN stack. This is basically my next
+    project coming up, as I'll be learning the Javascript/node.js equivalent of a Python Web App.
+    Looking forward to it, and this coincides with my syllabus too! That's actually why I started
+    learning backend to begin with.)
+
+  - Data Classes in Python (Just a quick lesson!)
+
+  - Solving Real World Data Science Problems with Python (Learning DS using real-world analogies
+    and examples)
+
+  - Data Science Apps with Python (Creating interesting applications with DS implemented in it.
+    This will probably relate most to my final year project where I will have to implement DS.
+    I will most likely do something related to F1 race results/classification prediction or bowling
+    oil pattern prediction alongside simulated test shots to test theory)
+
+  - Data Visualisation with Matplotlib (I think it's pretty self explanatory but I'll be learning
+    the basic ins and outs of matplotlib to do data visualisation using different graphs such as bar
+    graphs, plot-and-whisker graphs, or even line graphs. This can also come in the form of live graphs
+    and I might learn how to create an API for it, and may use it in my final year project with the
+    plotting of live results that are constantly changing and contrasting it with my predictions
+    in different colours... maybe? Who knows?)
+
+  - Machine Learning in Python (I think this is pretty self explanatory, but I actually find machine
+    learning and neural networks rather difficult to understand and comprehend, and may or may not
+    like it. But, I'll reserve my judgement for until after I'm completed with that project.
+    I'm looking forward to at least learning something that really challenges me and allows me
+    to grow intellectually and maybe even personally; not to say that the other projects won't,
+    but having dabbled in the theory of machine learning before, it has proved daunting to me,
+    and I'm up for that challenge. I'm expecting a tough challenge, but this will result in an
+    even sweeter feeling of success once I successfully complete the project and move on to bigger things!
